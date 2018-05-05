@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>car</title>
+  <script>
+    var BMW = {
+      make: 'BMW',
+      model: 'i8',
+      year: 2018,
+      color: 'blue',
+      passengers: 4,
+      mileage: 2000,
+      started: false,
+      drive: function () {
+        if (this.started) {
+          alert('GuLu! GuLu!')
+        } else {
+          alert('请先启动车')
+        }
+      },
+      start: function () {
+        this.started = true;
+      },
+      stop: function () {
+        this.started = false;
+      },
+      getColor: function () {
+        return this.color;
+      },
+      setColor: function (c) {
+        this.color = c;
+      }
+
+    }
+    BMW.start()
+    BMW.drive()
+    BMW.stop()
+    BMW.drive()
+    document.write(BMW.getColor() + '<br>')
+    BMW.setColor('green')
+    document.write(BMW.getColor() + '<br>')
+
+
+    document.write(BMW.make + "的型号是" + BMW.model + '<BR>')
+    function isNew(car) {
+      if (car.year >= 2016 && car.mileage < 10000) {
+        document.write("您的" + car.make + "是新车")
+      } else {
+        document.write("您的" + car.make + "已报废")
+      }
+    }
+    isNew(BMW)
+  </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
