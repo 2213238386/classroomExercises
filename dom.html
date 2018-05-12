@@ -9,14 +9,25 @@
       var obj = document.getElementById('t')
       alert(obj.innerHTML + "哈哈哈");
       obj.innerHTML = '改个名字';
+      alert(document.getElementById('pic').getAttribute('alt'));
+      document.getElementById('pic').setAttribute('src', 'dom_2.jpg');
     }
-    window.onload=init;
+    function changePic() {
+      if (document.getElementById('pic').getAttribute('src') == 'dom_1.jpg') {
+        document.getElementById('pic').setAttribute('src', 'dom_2.jpg');
+      } else {
+        document.getElementById('pic').setAttribute('src', 'dom_1.jpg');
+      }
+    }
+    window.onload = init;
   </script>
 </head>
 
 <body>
   <h1 id="t">我是一个标题</h1>
-
+  <img id="pic" src="dom_1.jpg" alt="复联">
+  <br>
+  <button onclick="changePic()">点我试试</button>
 </body>
 
 </html>
